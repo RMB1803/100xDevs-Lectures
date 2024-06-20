@@ -1,4 +1,4 @@
-const fs = require('fs');
+import { readFile } from 'fs';
 
 // my own asynchronous function
 // READING a file using promises and .then method.
@@ -6,7 +6,7 @@ const fs = require('fs');
 function ramsReadFile() {
     return new Promise(function(resolve) {
         console.log("Inside promise")
-        fs.readFile("temp.txt", "utf-8", function(err, data) {
+        readFile("temp.txt", "utf-8", function(err, data) {
             console.log("Before resolve")
             resolve(data);
         });

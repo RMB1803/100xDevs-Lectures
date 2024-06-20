@@ -37,10 +37,10 @@ async function is running it's code.
 
 //UNDERSTANDING fs.readFile function: //
 
-const fs = require("fs");
+import { readFile } from "fs";
 //filesystem module
 
-fs.readFile("temp.txt", "utf-8", function (err, data) {
+readFile("temp.txt", "utf-8", function (err, data) {
     console.log(data);
 })
 
