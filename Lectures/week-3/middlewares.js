@@ -1,6 +1,3 @@
-// mongodb+srv://rammohanofficial03:ram18032004@cluster0.nodncml.mongodb.net/
-// postgresql://test_owner:Yxo5F6QmJqyV@ep-odd-voice-a1y3enjl.ap-southeast-1.aws.neon.tech/test?sslmode=require
-
 import express from "express";
 const app = express();
 
