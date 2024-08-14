@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: wheat;">
+
+    <input type="text" placeholder="Principal" id="Principal">
+    <br></br>
+
+    <input type="text" placeholder="Rate" id="Rate">
+    <br></br>
+
+    <input type="text" placeholder="Time" id="Time">
+    <br></br>
+
+    <button>Calculate Total and Interest Amount</button>
+    <br></br>
+
+    <div id="result"></div>
+</body>
+
+<script>
+    const button = document.querySelector("button")   
+
+    button.addEventListener("click", async () => {
+        const Principal = document.getElementById("Principal").value
+        const Rate = document.getElementById("Rate").value
+        const Time = document.getElementById("Time").value
+
+        const result = document.getElementById("result")
+
+        const response = await fetch(`https://sum-server.100xdevs.com/interest?principal=${Principal}&rate=${Rate}&time=${Time}`)
+        const ans = await response.json();
+
+        result.innerHTML = `The Total Amount is ${ans.total} and Interest is ${ans.interest}`
+    })
+</script>
+</html>
