@@ -43,7 +43,7 @@ async function UpdateUser(username: string, {email, firstname, lastname}: update
     console.log(result);
 }
 
-// UpdateUser("harry@google.com", {email: "ryan@google.com", firstname: "Ryan", lastname: "Mason"})
+UpdateUser("harry@google.com", {email: "ryan@google.com", firstname: "Ryan", lastname: "Mason"})
 
 async function getUser(username: string) {
     const res = await prisma.user.findFirstOrThrow({
@@ -58,4 +58,4 @@ async function getUser(username: string) {
     console.log(res); 
 }
 
-getUser("robert@google.com")
+// getUser("robert@google.com")
