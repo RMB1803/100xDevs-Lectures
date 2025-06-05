@@ -1,6 +1,20 @@
 import { Hono } from 'hono'
 
-const blog = new Hono()
+const blog = new Hono<{
+    Bindings: {
+        DATABASE_URL: string
+        JWT_SECRET: string
+    },
+    Variables: {
+        userid: string
+    }
+}>()
+
+blog.use('/api/v1/blog/*', async (c, next) => {
+
+
+    await next()
+})
 
 blog.post("/", (c) => {
     return c.text("Hello hono")
