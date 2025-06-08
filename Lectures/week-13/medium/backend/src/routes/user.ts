@@ -1,13 +1,13 @@
 import { Hono } from 'hono'
-import { PrismaClient } from '@prisma/client/edge';
 import { withAccelerate } from '@prisma/extension-accelerate';
-import { decode, sign, verify } from 'hono/jwt'
+import { sign } from 'hono/jwt'
+import { PrismaClient } from '@prisma/client/edge';
 
 const user = new Hono<{
     Bindings: {
         DATABASE_URL: string
         JWT_SECRET: string
-    }
+    }   
 }>()
 
 user.post("/signup", async (c) => {
@@ -44,7 +44,8 @@ user.post("/signin", async (c) => {
     try {
         const user = await prisma.user.findUnique({
             where: {
-                email: body.email
+                email: body.email,
+                password: body.password
             }
         })
 

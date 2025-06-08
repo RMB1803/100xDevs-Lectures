@@ -4,7 +4,7 @@ import blog from './routes/blog'
 
 const app = new Hono();
 
-app.route('/api/v1/', user)
+app.route('/api/v1/user', user)
 app.route('/api/v1/blog', blog)
 
 
