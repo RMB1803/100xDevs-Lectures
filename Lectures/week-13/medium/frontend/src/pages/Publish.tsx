@@ -5,7 +5,7 @@ import axios from "axios";
 import AppBar from "../components/AppBar";
 
 
-export const Publish = () => {
+const Publish = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
@@ -53,3 +53,5 @@ function TextEditor({ onChange }: {onChange: (e: ChangeEvent<HTMLTextAreaElement
     </div>
     
 }
+
+export default Publish;
